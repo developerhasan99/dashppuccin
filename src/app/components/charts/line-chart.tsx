@@ -133,7 +133,7 @@ const LineChart: React.FC = () => {
 
     return (
         <div className="pl-4 pb-4 pt-6 pr-6 border-yellow border-[3px] rounded-3xl bg-base">
-            <div className="flex flex-wrap gap-6 justify-between px-4 mb-4">
+            <div className="flex flex-wrap items-center gap-6 justify-between px-4 mb-4">
                 <div className="flex flex-wrap gap-6">
                     <div className="relative pl-6">
                         <span className="inline-block w-3 h-3 bg-mauve rounded-full absolute top-2 left-0"></span>
@@ -155,13 +155,13 @@ const LineChart: React.FC = () => {
                     </div>
                 </div>
                 <div className="p-1 flex gap-1 bg-mantle border-2 border-sapphire rounded-3xl">
-                    <button className="text-xs text-base bg-sky px-2 rounded-3xl">
+                    <button className="text-xs text-base bg-sky px-2 py-1 rounded-3xl">
                         Day
                     </button>
-                    <button className="text-xs text-text bg-surface-1 px-2 rounded-3xl">
+                    <button className="text-xs text-text bg-surface-1 px-2 py-1 rounded-3xl">
                         Week
                     </button>
-                    <button className="text-xs text-text bg-surface-1 px-2 rounded-3xl">
+                    <button className="text-xs text-text bg-surface-1 px-2 py-1 rounded-3xl">
                         Month
                     </button>
                 </div>

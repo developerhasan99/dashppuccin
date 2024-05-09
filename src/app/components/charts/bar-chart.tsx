@@ -96,15 +96,15 @@ const BarChart: React.FC = () => {
 
     return (
         <div className="p-6 border-[3px] border-sky rounded-3xl bg-base">
-            <div className="flex gap-6 flex-wrap justify-between mb-4 px-4">
+            <div className="flex gap-6 flex-wrap items-center justify-between mb-4 px-4">
                 <h2 className="font-bold text-xl text-text">
                     Profit this week
                 </h2>
                 <div className="p-1 flex gap-1 bg-mantle border-2 border-maroon rounded-3xl">
-                    <button className="text-xs text-base bg-peach px-2 rounded-3xl">
+                    <button className="text-xs text-base bg-peach px-2 py-1 rounded-3xl">
                         This week
                     </button>
-                    <button className="text-xs text-text bg-surface-1 px-2 rounded-3xl">
+                    <button className="text-xs text-text bg-surface-1 px-2 py-1 rounded-3xl">
                         Last week
                     </button>
                 </div>
