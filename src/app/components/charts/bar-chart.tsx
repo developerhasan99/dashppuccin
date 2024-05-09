@@ -1,13 +1,16 @@
 "use client";
 
 import { ApexOptions } from "apexcharts";
+import dynamic from "next/dynamic";
 import React, { useState } from "react";
-import ReactApexChart from "react-apexcharts";
+
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+    ssr: false,
+});
 
 const options: ApexOptions = {
     colors: ["#3C50E0", "#80CAEE"],
     chart: {
-        fontFamily: "Satoshi, sans-serif",
         type: "bar",
         height: 335,
         stacked: true,
@@ -51,7 +54,6 @@ const options: ApexOptions = {
     legend: {
         position: "top",
         horizontalAlign: "left",
-        fontFamily: "Satoshi",
         fontWeight: 500,
         fontSize: "14px",
 
@@ -94,15 +96,20 @@ const BarChart: React.FC = () => {
 
     return (
         <div className="p-6 border-[3px] border-sky rounded-3xl bg-base">
-            <div className="flex">
-                <h2>Profit this week</h2>
-                <div></div>
-            </div>
-            <div>
-                <div>
-                    <span className="inline-block h-2 w-2 bg-peach"></span>
+            <div className="flex gap-6 flex-wrap justify-between mb-4 px-4">
+                <h2 className="font-bold text-xl text-text">
+                    Profit this week
+                </h2>
+                <div className="p-1 flex gap-1 bg-mantle border-2 border-maroon rounded-3xl">
+                    <button className="text-xs text-base bg-peach px-2 rounded-3xl">
+                        This week
+                    </button>
+                    <button className="text-xs text-text bg-surface-1 px-2 rounded-3xl">
+                        Last week
+                    </button>
                 </div>
             </div>
+
             <ReactApexChart
                 options={options}
                 series={state.series}

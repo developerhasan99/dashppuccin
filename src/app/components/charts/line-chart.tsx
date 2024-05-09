@@ -1,8 +1,12 @@
 "use client";
 
 import { ApexOptions } from "apexcharts";
+import dynamic from "next/dynamic";
 import React, { useState } from "react";
-import ReactApexChart from "react-apexcharts";
+
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+    ssr: false,
+});
 
 const options: ApexOptions = {
     legend: {
@@ -12,7 +16,6 @@ const options: ApexOptions = {
     },
     colors: ["#cba6f7", "#89b4fa"],
     chart: {
-        fontFamily: "Inter, sans-serif",
         height: 335,
         type: "area",
         toolbar: {
@@ -130,6 +133,39 @@ const LineChart: React.FC = () => {
 
     return (
         <div className="pl-4 pb-4 pt-6 pr-6 border-yellow border-[3px] rounded-3xl bg-base">
+            <div className="flex flex-wrap gap-6 justify-between px-4 mb-4">
+                <div className="flex flex-wrap gap-6">
+                    <div className="relative pl-6">
+                        <span className="inline-block w-3 h-3 bg-mauve rounded-full absolute top-2 left-0"></span>
+                        <h2 className="font-bold text-xl text-mauve">
+                            Profit this week
+                        </h2>
+                        <p className="text-xs text-subtext-1 font-bold">
+                            12.04.2024 - 12.05.2024
+                        </p>
+                    </div>
+                    <div className="relative pl-6">
+                        <span className="inline-block w-3 h-3 bg-blue rounded-full absolute top-2 left-0"></span>
+                        <h2 className="font-bold text-xl text-blue">
+                            Profit last week
+                        </h2>
+                        <p className="text-xs text-subtext-1 font-bold">
+                            12.04.2024 - 12.05.2024
+                        </p>
+                    </div>
+                </div>
+                <div className="p-1 flex gap-1 bg-mantle border-2 border-sapphire rounded-3xl">
+                    <button className="text-xs text-base bg-sky px-2 rounded-3xl">
+                        Day
+                    </button>
+                    <button className="text-xs text-text bg-surface-1 px-2 rounded-3xl">
+                        Week
+                    </button>
+                    <button className="text-xs text-text bg-surface-1 px-2 rounded-3xl">
+                        Month
+                    </button>
+                </div>
+            </div>
             <ReactApexChart
                 options={options}
                 series={state.series}

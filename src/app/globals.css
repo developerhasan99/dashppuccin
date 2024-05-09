@@ -4,7 +4,7 @@
 
 /* Apex Chart Styles */
 .apexcharts-legend-text {
-    @apply text-subtext-1;
+    @apply !text-subtext-1;
 }
 
 .apexcharts-text {
